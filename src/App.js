@@ -13,7 +13,7 @@ function App() {
   const [editPost, setEditPost] = useState(null);
   const [showPostForm, setShowPostForm] = useState(false);
 
-  const navigate = useNavigate(); // <-- MOVE THIS INSIDE THE FUNCTION
+  const navigate = useNavigate();
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data?.user));
@@ -65,6 +65,7 @@ function App() {
     setEditPost(post);
     setShowPostForm(true);
   };
+  const handleHome = () => navigate('/');
 
   const handleUpdate = async (id, title, description, content) => {
     const { error } = await supabase
@@ -103,6 +104,7 @@ function App() {
         onLogout={handleLogout}
         onMyBlogs={handleMyBlogs}
         onAddPost={handleShowPostForm}
+        onHome={handleHome}
       />
       <Routes>
         <Route
@@ -162,3 +164,5 @@ function App() {
 }
 
 export default App;
+
+
