@@ -4,14 +4,17 @@ blog-frontend/
 │
 ├── src/
 │   ├── components/
-│   │   ├── PostList.js      # Displays multiple posts
-│   │   ├── PostForm.js      # Handles new/edit post form
-│   │   └── PostItem.js      # Individual post layout
-│   ├── supabaseClient.js    # Supabase setup/config, use in components
-│   ├── App.js               # Main application logic, routes, layout
-│   ├── index.js             # React entry point, renders <App />
+│   │   ├── Navbar.js        # Top navigation bar, handles routing
+│   │   ├── Auth.js          # Login and signup forms and logic
+│   │   ├── PostList.js      # Displays all posts in a list
+│   │   ├── PostForm.js      # Add/edit post form with validation
+│   │   ├── PostItem.js      # Individual post card/preview
+│   │   └── BlogDetail.js    # Full single post view
+│   ├── supabaseClient.js    # Supabase setup/config, import in components
+│   ├── App.js               # Main application logic, handles routes and state
+│   ├── index.js             # React entry; wraps App with BrowserRouter
 │   └── styles/
 │       └── main.css         # Custom global styles; expand as needed
 │
 ├── package.json             # Project dependencies/scripts
-└── README.md                # Project intro/setup guide
+└── README.md                # Project introduction, setup, and usage info
